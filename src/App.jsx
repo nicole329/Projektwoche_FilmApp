@@ -3,6 +3,7 @@ import "./App.css";
 
 import HaikuCard from "./components/HaikuCard";
 import MoodWheel from "./components/MoodWheel";
+import { ChakraProvider } from "@chakra-ui/react";
 
 function App() {
   const [mood, setMood] = useState(null);
