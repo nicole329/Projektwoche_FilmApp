@@ -2,26 +2,28 @@ import { useState } from "react";
 import "./App.css";
 
 import HaikuCard from "./components/HaikuCard";
-import MoodWheel from "./components/MoodWheel";
-
+import MovieWheel from "./components/MovieWheel";
 
 function App() {
   const [mood, setMood] = useState(null);
 
   return (
     <div className="app">
-      
-      {/* optional: dein bestehendes Feature bleibt drin */}
+
+      {/* Bestehendes Feature */}
       <HaikuCard />
 
-      {/* Hauptbereich deiner neuen App */}
+      {/* Header */}
       <header className="header">
         <h1>MoodFlix 🎬</h1>
         <p>Wähle deine Stimmung und finde deinen Film</p>
       </header>
 
+      {/* Hauptbereich */}
       <main className="container">
-       {/* <MoodWheel onSelectMood={(selectedMood) => setMood(selectedMood)} /> */}
+
+        {/* Neues Glücksrad */}
+        <MovieWheel />
 
         {mood && (
           <div className="result">
@@ -29,6 +31,7 @@ function App() {
             <p>{mood}</p>
           </div>
         )}
+
       </main>
 
     </div>
