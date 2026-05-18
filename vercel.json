@@ -1,0 +1,21 @@
+{
+  "buildCommand": "npm run build",
+  "outputDirectory": "dist",
+  "rewrites": [
+    { "source": "/api/(.*)", "destination": "/api/$1" }
+  ]
+}
+
+// ─────────────────────────────────────────────────────────────────
+// vercel.json  –  Vercel Deployment-Konfiguration
+//
+// buildCommand:    Welcher Befehl das Projekt baut (Vite → dist/)
+// outputDirectory: Wohin Vite die fertigen Dateien schreibt
+//
+// rewrites: Leitet alle /api/... Anfragen an die gleichnamigen
+//   Dateien im /api-Ordner weiter. Das ist nötig damit das
+//   Frontend mit fetch('/api/ai') die Vercel Function erreicht.
+//
+//   Ohne diese Regel würde Vercel /api/ai als statische Datei
+//   suchen statt als serverlose Funktion aufzurufen.
+// ─────────────────────────────────────────────────────────────────
